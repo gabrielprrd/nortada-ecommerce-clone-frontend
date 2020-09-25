@@ -1,28 +1,16 @@
-import React, { useState, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 
 import PRODUCTS_LIST from '../../store/productsList';
 import ProductContainer from '../../components/ProductContainer/index';
-import actions from '../../actions/cart';
 
 export default function Home() {
-  const [beerList] = useState(PRODUCTS_LIST);
-  const dispatch = useDispatch();
-
-  const addBeerToCart = useCallback(
-    (product) => {
-      dispatch(actions.addProduct(product));
-    },
-    [dispatch]
-  );
-
   return (
     <>
       <div>
-        <h1>Bebe nortada em tua casa</h1>
+        <h1>Bebe Nortada em tua casa</h1>
       </div>
 
-      {beerList.map((product) => {
+      {PRODUCTS_LIST.map((product) => {
         const { title, img, quantityOptions } = product;
         return (
           <ProductContainer
@@ -30,7 +18,6 @@ export default function Home() {
             title={title}
             quantityOptions={quantityOptions}
             img={img}
-            addBeerToCart={() => addBeerToCart(product)}
           />
         );
       })}

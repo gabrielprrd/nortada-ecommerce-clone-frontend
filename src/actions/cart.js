@@ -1,11 +1,13 @@
 import actionsTypes from '../constants/cart';
 
 const actions = {
-  addProduct: () => ({
+  addProduct: (item) => ({
     type: actionsTypes.ADD_PRODUCT,
+    product: item,
   }),
-  removeProduct: () => ({
+  removeProduct: (item) => ({
     type: actionsTypes.REMOVE_PRODUCT,
+    removedProduct: item,
   }),
   clearCart: () => ({ type: actionsTypes.CLEAR_CART }),
 };

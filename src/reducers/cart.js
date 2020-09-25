@@ -6,12 +6,18 @@ const INITIAL_STATE = {
 
 const cartReducers = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionsTypes.ADD_PRODUCT:
-      return { ...state, products: [state.products] };
-    case actionsTypes.REMOVE_PRODUCT:
-      // needs to create a way to remove the item
-      // maybe the best way is on the cart component change the state and just put it here
-      return { ...state, products: [state.products] };
+    case actionsTypes.ADD_PRODUCT: {
+      if (state.products === undefined) {
+        return { products: [action.product] };
+      }
+      return { ...state, products: [...state.products, action.product] };
+    }
+    case actionsTypes.REMOVE_PRODUCT: {
+      const newState = state.products.filter(
+        (item) => item !== action.removedProduct
+      );
+      return { products: newState };
+    }
     case actionsTypes.CLEAR_CART:
       return { products: INITIAL_STATE.products };
     default:
