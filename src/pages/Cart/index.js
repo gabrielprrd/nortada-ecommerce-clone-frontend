@@ -16,7 +16,7 @@ export default function Cart() {
   };
 
   return (
-    <div>
+    <>
       {products.map((product) => {
         const { title, img } = product;
         return (
@@ -41,6 +41,6 @@ export default function Cart() {
           </div>
         );
       })}
-    </div>
+    </>
   );
 }
