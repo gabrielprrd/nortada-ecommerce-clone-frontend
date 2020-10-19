@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import PRODUCTS_LIST from '../../store/productsList';
 import ProductContainer from '../../components/ProductContainer/index';
@@ -14,7 +15,7 @@ export default function Home() {
         const { title, img, quantityOptions } = product;
         return (
           <ProductContainer
-            key={title}
+            key={uuidv4()}
             title={title}
             quantityOptions={quantityOptions}
             img={img}

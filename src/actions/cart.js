@@ -3,7 +3,7 @@ import actionsTypes from '../constants/cart';
 const actions = {
   addProduct: (item) => ({
     type: actionsTypes.ADD_PRODUCT,
-    product: item,
+    addedProduct: item,
   }),
   removeProduct: (item) => ({
     type: actionsTypes.REMOVE_PRODUCT,

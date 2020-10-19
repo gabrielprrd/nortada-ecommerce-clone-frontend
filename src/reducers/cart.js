@@ -7,19 +7,41 @@ const INITIAL_STATE = {
 const cartReducers = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionsTypes.ADD_PRODUCT: {
-      if (state.products === undefined) {
-        return { products: [action.product] };
+      // If state is empty, returns the product without spreading the state.
+      if (state.products.length === 0) {
+        return { ...state, products: [action.addedProduct] };
       }
-      return { ...state, products: [...state.products, action.product] };
+      // search on the products object if the same product is already on cart.
+      const updatedList = state.products.map((product) => {
+        if (product.title === action.addedProduct.title) {
+          // If it is, sums the quantity
+          const updatedProductQuantity =
+            Math.round(product.quantity) +
+            Math.round(action.addedProduct.quantity);
+
+          // then returns the updated item
+          return {
+            ...product,
+            quantity: updatedProductQuantity,
+          };
+        }
+        // else just returns the items normally
+        return product;
+      });
+
+      return {
+        ...state,
+        products: [...updatedList, action.addedProduct],
+      };
     }
     case actionsTypes.REMOVE_PRODUCT: {
       const newState = state.products.filter(
         (item) => item !== action.removedProduct
       );
-      return { products: newState };
+      return { ...state, products: newState };
     }
     case actionsTypes.CLEAR_CART:
-      return { products: INITIAL_STATE.products };
+      return { ...state };
     default:
       return state;
   }

@@ -7,10 +7,11 @@ import actions from '../../actions/cart';
 export default function ProductContainer({ title, quantityOptions, img }) {
   const dispatch = useDispatch();
   const [selectValue, setSelectValue] = useState(quantityOptions[0].price);
+  const [pack, setPack] = useState(quantityOptions[0].quantity);
   const [quantityPurchased, setQuantityPurchased] = useState(1);
 
   const options = quantityOptions.map((option) => ({
-    value: option.price,
+    value: option.price.toFixed(2),
     label: option.quantity,
   }));
 
@@ -19,7 +20,9 @@ export default function ProductContainer({ title, quantityOptions, img }) {
     const purchasedProduct = {
       img,
       title,
+      price: selectValue,
       quantity: quantityPurchased,
+      pack,
       calculatedPrice,
     };
     dispatch(actions.addProduct(purchasedProduct));
@@ -27,6 +30,7 @@ export default function ProductContainer({ title, quantityOptions, img }) {
 
   const handleSelect = (selectedItem) => {
     setSelectValue(selectedItem.value);
+    setPack(selectedItem.label);
   };
 
   const handleNumber = (e) => {

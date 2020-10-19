@@ -1,5 +1,7 @@
 Todo List:
     ✔ Implementar uuid no cart para acabar com erro de "all child should have a key" @done(20-09-26 18:09)
     ✔ Contador no ícone do carrinho para saber quantos itens foram adicionados @done(20-09-26 18:59)
-    ☐ Decidir se uso o ProductContainer no Cart ou uso novos components
-    ☐ Impedir o carrinho de adicionar o produto múltiṕlas vezes. Quando um produto for readicionado, soma no quantity
+    ✔ Decidir se uso o ProductContainer no Cart ou uso novos components @done(20-09-26 19:25)
+    ☐ Opção de atualizar quantidades do produto no carrinho
+    ☐ Quandoa adicionar um produto que já está no carrinho, modificar a quantidade 
+    ☐ Usar Jest pra fazer testes na UI

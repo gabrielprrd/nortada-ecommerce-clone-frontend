@@ -20,7 +20,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 24',
         price: 32.2,
-      }
+      },
     ],
   },
   {
@@ -44,7 +44,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 24',
         price: 32.2,
-      }
+      },
     ],
   },
   {
@@ -68,7 +68,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 24',
         price: 44.7,
-      }
+      },
     ],
   },
   {
@@ -92,7 +92,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 24',
         price: 44.7,
-      }
+      },
     ],
   },
   {
@@ -116,7 +116,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 24',
         price: 44.7,
-      }
+      },
     ],
   },
   {
@@ -140,7 +140,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 24',
         price: 44.7,
-      }
+      },
     ],
   },
   {
@@ -164,7 +164,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 24',
         price: 57.3,
-      }
+      },
     ],
   },
   {
@@ -180,7 +180,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 10',
         price: 20.6,
-      }
+      },
     ],
   },
   {
@@ -194,7 +194,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 10',
         price: 20.1,
-      }
+      },
     ],
   },
   {
@@ -217,7 +217,7 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 24',
         price: 44.7,
-      }
+      },
     ],
   },
   {
@@ -235,9 +235,9 @@ const PRODUCTS_LIST = [
       {
         quantity: 'Pack 10',
         price: 29.0,
-      }
+      },
     ],
-  }
+  },
 ];
 
 module.exports = PRODUCTS_LIST;
